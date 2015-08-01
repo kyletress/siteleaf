@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0995C42D1B6C80960017265C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0995C4261B6C7F9B0017265C /* Alamofire.framework */; };
 		0995C42E1B6C80960017265C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0995C4261B6C7F9B0017265C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0995C4331B6C877B0017265C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0995C4321B6C877B0017265C /* SwiftyJSON.swift */; };
+		0995C4381B6C8DB70017265C /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0995C4371B6C8DB70017265C /* KeychainWrapper.swift */; };
+		0995C43A1B6C983D0017265C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0995C4391B6C983D0017265C /* API.swift */; };
 		09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */; };
 		09D8A1B31B6C0FC1006D753B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B21B6C0FC1006D753B /* ViewController.swift */; };
 		09D8A1B61B6C0FC1006D753B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D8A1B41B6C0FC1006D753B /* Main.storyboard */; };
@@ -78,6 +81,9 @@
 
 /* Begin PBXFileReference section */
 		0995C41E1B6C7F9B0017265C /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../Desktop/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
+		0995C4321B6C877B0017265C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = ../SwiftyJSON.swift; sourceTree = "<group>"; };
+		0995C4371B6C8DB70017265C /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = ../KeychainWrapper.swift; sourceTree = "<group>"; };
+		0995C4391B6C983D0017265C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = ../API.swift; sourceTree = "<group>"; };
 		09D8A1AB1B6C0FC1006D753B /* Siteleaf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siteleaf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D8A1AF1B6C0FC1006D753B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +148,9 @@
 		09D8A1AD1B6C0FC1006D753B /* Siteleaf */ = {
 			isa = PBXGroup;
 			children = (
+				0995C4391B6C983D0017265C /* API.swift */,
+				0995C4371B6C8DB70017265C /* KeychainWrapper.swift */,
+				0995C4321B6C877B0017265C /* SwiftyJSON.swift */,
 				09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */,
 				09D8A1B21B6C0FC1006D753B /* ViewController.swift */,
 				09D8A1B41B6C0FC1006D753B /* Main.storyboard */,
@@ -316,8 +325,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0995C4331B6C877B0017265C /* SwiftyJSON.swift in Sources */,
+				0995C4381B6C8DB70017265C /* KeychainWrapper.swift in Sources */,
 				09D8A1B31B6C0FC1006D753B /* ViewController.swift in Sources */,
 				09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */,
+				0995C43A1B6C983D0017265C /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
