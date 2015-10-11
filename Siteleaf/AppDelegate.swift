@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
       // check nsuserdefaults for loggedin flag
       let defaults = NSUserDefaults.standardUserDefaults()
-      defaults.setObject("false", forKey: "userLoggedIn")
       if let status = defaults.stringForKey("userLoggedIn") {
         if status == "true" {
           print("Logged in. Proceed to site selection controller")

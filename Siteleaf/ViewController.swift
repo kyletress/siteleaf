@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
@@ -16,8 +17,6 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // check user defaults for userLoggedIn flag. 
-    // if true, skip to tabbar controller (app delegate)
   }
 
   override func didReceiveMemoryWarning() {
@@ -28,9 +27,7 @@ class ViewController: UIViewController {
   @IBAction func loginButton() {
     let user = emailTextField.text!
     let password = passwordTextField.text!
-    let credentialData = "\(user):\(password)".dataUsingEncoding(NSUTF8StringEncoding)!
-    let base64Credentials = credentialData.base64EncodedStringWithOptions([])
-    let headers = ["Authorization": "Basic \(base64Credentials)"]
+    let headers = encodeHeaders(user, pass: password)
     
     Alamofire.request(.POST, "https://api.siteleaf.com/v1/auth.json", headers: headers)
       .responseJSON { response in
@@ -43,27 +40,30 @@ class ViewController: UIViewController {
           //let retrievedKey = KeychainWrapper.stringForKey("apiKey")
           //let retrievedSecret: String? = KeychainWrapper.stringForKey("apiSecret")
           self.pingServer()
+          let defaults = NSUserDefaults.standardUserDefaults()
+          defaults.setObject("true", forKey: "userLoggedIn")
         }
     }
   }
   
   func pingServer() {
-    let key = KeychainWrapper.stringForKey("apiKey")!
-    let secret = KeychainWrapper.stringForKey("apiSecret")!
-    let credentialData = "\(key):\(secret)".dataUsingEncoding(NSUTF8StringEncoding)!
-    let base64Credentials = credentialData.base64EncodedStringWithOptions([])
-    let headers = ["Authorization": "Basic \(base64Credentials)"]
-    Alamofire.request(.GET, "https://api.siteleaf.com/v1/ping.json", headers: headers).responseJSON {
-      response in
-      if let JSON = response.result.value {
-        print("JSON: \(JSON)")
-      }
-    }
-    self.testPing()
+//    SiteleafAPI.request(Router.Ping)
+//    let key = KeychainWrapper.stringForKey("apiKey")!
+//    let secret = KeychainWrapper.stringForKey("apiSecret")!
+//    let headers = encodeHeaders(key, pass: secret)
+//    
+//    Alamofire.request(.GET, "https://api.siteleaf.com/v1/ping.json", headers: headers).responseJSON {
+//      response in
+//      if let JSON = response.result.value {
+//        print("JSON: \(JSON)")
+//      }
+//    }
   }
   
-  func testPing() {
-    Alamofire.request(Router.Ping)
+  func encodeHeaders(user: String, pass: String) -> [String: String] {
+    let credentialData = "\(user):\(pass)".dataUsingEncoding(NSUTF8StringEncoding)!
+    let base64Credentials = credentialData.base64EncodedStringWithOptions([])
+    return ["Authorization": "Basic \(base64Credentials)"]
   }
 
   
