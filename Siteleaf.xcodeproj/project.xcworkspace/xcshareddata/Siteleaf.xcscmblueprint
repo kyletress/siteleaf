@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "751E06A2D453FAA4FA2AF3283EA3C8E90D02501F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "751E06A2D453FAA4FA2AF3283EA3C8E90D02501F" : 0,
+    "67620B5EFA902936DF04070AF595B76AB0333747" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2619DE2B-ABD6-4184-925A-A94803DE7B30",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "751E06A2D453FAA4FA2AF3283EA3C8E90D02501F" : "siteleaf\/",
+    "67620B5EFA902936DF04070AF595B76AB0333747" : "siteleaf\/Alamofire\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Siteleaf",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Siteleaf.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Alamofire\/Alamofire.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "67620B5EFA902936DF04070AF595B76AB0333747"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/kyletress\/siteleaf.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "751E06A2D453FAA4FA2AF3283EA3C8E90D02501F"
+    }
+  ]
+}

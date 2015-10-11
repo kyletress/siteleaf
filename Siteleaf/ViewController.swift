@@ -16,6 +16,8 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    // check user defaults for userLoggedIn flag. 
+    // if true, skip to tabbar controller (app delegate)
   }
 
   override func didReceiveMemoryWarning() {
@@ -57,6 +59,11 @@ class ViewController: UIViewController {
         print("JSON: \(JSON)")
       }
     }
+    self.testPing()
+  }
+  
+  func testPing() {
+    Alamofire.request(Router.Ping)
   }
 
   
