@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0995C4381B6C8DB70017265C /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0995C4371B6C8DB70017265C /* KeychainWrapper.swift */; };
 		0995C43A1B6C983D0017265C /* SiteleafAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0995C4391B6C983D0017265C /* SiteleafAPI.swift */; };
 		09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */; };
 		09D8A1B31B6C0FC1006D753B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B21B6C0FC1006D753B /* ViewController.swift */; };
@@ -44,7 +43,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0995C4371B6C8DB70017265C /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeychainWrapper.swift; path = ../KeychainWrapper.swift; sourceTree = "<group>"; };
 		0995C4391B6C983D0017265C /* SiteleafAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SiteleafAPI.swift; path = ../SiteleafAPI.swift; sourceTree = "<group>"; };
 		09D8A1AB1B6C0FC1006D753B /* Siteleaf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siteleaf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D8A1AF1B6C0FC1006D753B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				0995C4391B6C983D0017265C /* SiteleafAPI.swift */,
-				0995C4371B6C8DB70017265C /* KeychainWrapper.swift */,
 				09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */,
 				09E881FD1BCAD2DC006941FF /* Site.swift */,
 				09D8A1B21B6C0FC1006D753B /* ViewController.swift */,
@@ -316,7 +313,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0995C4381B6C8DB70017265C /* KeychainWrapper.swift in Sources */,
 				09D8A1B31B6C0FC1006D753B /* ViewController.swift in Sources */,
 				09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */,
 				09E881FE1BCAD2DC006941FF /* Site.swift in Sources */,
