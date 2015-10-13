@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0995C43A1B6C983D0017265C /* SiteleafAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0995C4391B6C983D0017265C /* SiteleafAPI.swift */; };
+		0944E3C51BCB1522002A03AF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944E3C41BCB1522002A03AF /* Router.swift */; settings = {ASSET_TAGS = (); }; };
 		09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */; };
 		09D8A1B31B6C0FC1006D753B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B21B6C0FC1006D753B /* ViewController.swift */; };
 		09D8A1B61B6C0FC1006D753B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D8A1B41B6C0FC1006D753B /* Main.storyboard */; };
@@ -15,7 +15,6 @@
 		09D8A1BB1B6C0FC1006D753B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09D8A1B91B6C0FC1006D753B /* LaunchScreen.xib */; };
 		09D8A1C71B6C0FC1006D753B /* SiteleafTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1C61B6C0FC1006D753B /* SiteleafTests.swift */; };
 		09E881FE1BCAD2DC006941FF /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E881FD1BCAD2DC006941FF /* Site.swift */; settings = {ASSET_TAGS = (); }; };
-		09E882041BCB0295006941FF /* Gemfile in Resources */ = {isa = PBXBuildFile; fileRef = 09E882031BCB0295006941FF /* Gemfile */; settings = {ASSET_TAGS = (); }; };
 		9937507AE8CEF13D0C9FB1AD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D50C96E3E67A294AD3697BC6 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0995C4391B6C983D0017265C /* SiteleafAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SiteleafAPI.swift; path = ../SiteleafAPI.swift; sourceTree = "<group>"; };
+		0944E3C41BCB1522002A03AF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		09D8A1AB1B6C0FC1006D753B /* Siteleaf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siteleaf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D8A1AF1B6C0FC1006D753B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,7 +54,6 @@
 		09D8A1C51B6C0FC1006D753B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09D8A1C61B6C0FC1006D753B /* SiteleafTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteleafTests.swift; sourceTree = "<group>"; };
 		09E881FD1BCAD2DC006941FF /* Site.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
-		09E882031BCB0295006941FF /* Gemfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Gemfile; sourceTree = "<group>"; };
 		41361F3C23065B493590197C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		67AC734DA2D0F5AD92A11165 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D50C96E3E67A294AD3697BC6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,7 +81,6 @@
 		09D8A1A21B6C0FC1006D753B = {
 			isa = PBXGroup;
 			children = (
-				09E882031BCB0295006941FF /* Gemfile */,
 				09D8A1AD1B6C0FC1006D753B /* Siteleaf */,
 				09D8A1C31B6C0FC1006D753B /* SiteleafTests */,
 				09D8A1AC1B6C0FC1006D753B /* Products */,
@@ -104,7 +101,7 @@
 		09D8A1AD1B6C0FC1006D753B /* Siteleaf */ = {
 			isa = PBXGroup;
 			children = (
-				0995C4391B6C983D0017265C /* SiteleafAPI.swift */,
+				0944E3C41BCB1522002A03AF /* Router.swift */,
 				09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */,
 				09E881FD1BCAD2DC006941FF /* Site.swift */,
 				09D8A1B21B6C0FC1006D753B /* ViewController.swift */,
@@ -244,7 +241,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09E882041BCB0295006941FF /* Gemfile in Resources */,
 				09D8A1B61B6C0FC1006D753B /* Main.storyboard in Resources */,
 				09D8A1BB1B6C0FC1006D753B /* LaunchScreen.xib in Resources */,
 				09D8A1B81B6C0FC1006D753B /* Images.xcassets in Resources */,
@@ -315,8 +311,8 @@
 			files = (
 				09D8A1B31B6C0FC1006D753B /* ViewController.swift in Sources */,
 				09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */,
+				0944E3C51BCB1522002A03AF /* Router.swift in Sources */,
 				09E881FE1BCAD2DC006941FF /* Site.swift in Sources */,
-				0995C43A1B6C983D0017265C /* SiteleafAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

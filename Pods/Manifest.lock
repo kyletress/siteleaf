@@ -1,15 +1,15 @@
 PODS:
-  - Alamofire (3.0.0)
+  - Alamofire (3.0.0-beta.3)
   - SwiftKeychainWrapper (1.0.11)
   - SwiftyJSON (2.3.0)
 
 DEPENDENCIES:
-  - Alamofire (= 3.0.0)
+  - Alamofire (= 3.0.0-beta.3)
   - SwiftKeychainWrapper
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: b61782387f81bcc538a0284cf2bb5d7995cd0a80
+  Alamofire: c89149e58431f6f94527e8c01f920456afe39bd0
   SwiftKeychainWrapper: 011a6946923948ffa49708014dd691164d7621d1
   SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
 
