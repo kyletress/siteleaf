@@ -54,7 +54,7 @@
         <!--Item 2-->
         <scene sceneID="3oG-DM-9en">
             <objects>
-                <viewController id="K83-fg-N8E" sceneMemberID="viewController">
+                <viewController id="K83-fg-N8E" customClass="MeViewController" customModule="Siteleaf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZDy-gi-s1w"/>
                         <viewControllerLayoutGuide type="bottom" id="Fd8-Ha-h9F"/>
@@ -62,10 +62,30 @@
                     <view key="view" contentMode="scaleToFill" id="SkJ-zF-rNn">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iLA-8g-Aha">
+                                <rect key="frame" x="255" y="253" width="55" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOutButton:" destination="K83-fg-N8E" eventType="touchUpInside" id="VWa-cY-ses"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mns-5x-psT">
+                                <rect key="frame" x="69" y="169" width="327" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="xFm-rg-l6h"/>
+                    <connections>
+                        <outlet property="userNameLabel" destination="Mns-5x-psT" id="HOd-Hy-CTW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cba-Qq-b1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,7 +94,7 @@
         <!--Item 1-->
         <scene sceneID="abn-TR-lcO">
             <objects>
-                <viewController id="cNz-yJ-sjO" sceneMemberID="viewController">
+                <viewController id="cNz-yJ-sjO" customClass="SitesViewController" customModule="Siteleaf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YSw-V8-NRY"/>
                         <viewControllerLayoutGuide type="bottom" id="nZ5-QF-UZo"/>
@@ -82,10 +102,32 @@
                     <view key="view" contentMode="scaleToFill" id="uNB-el-tyI">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NNt-Tu-E7l">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Jvd-pU-B0h">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Jvd-pU-B0h" id="FGJ-us-yL0">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="IpC-Ic-1y5"/>
+                    <connections>
+                        <outlet property="sitesTableView" destination="NNt-Tu-E7l" id="186-ux-Zji"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDb-ud-e5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
