@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Siteleaf" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="vXZ-lx-hvc" customClass="LoginViewController" customModule="Siteleaf" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -94,7 +94,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="IWD-dP-S2K">
             <objects>
-                <tabBarController id="JbN-Xg-apw" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" id="JbN-Xg-apw" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="j5m-kS-45S">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

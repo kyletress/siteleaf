@@ -15,13 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-      // check nsuserdefaults for loggedin flag
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
       let defaults = NSUserDefaults.standardUserDefaults()
       if let status = defaults.stringForKey("userLoggedIn") {
         if status == "true" {
           print("Logged in. Proceed to site selection controller")
+          let tabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+          self.window?.rootViewController = tabBarController
         } else {
           print("Please log in.")
+          let loginVC = storyboard.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
+          self.window?.rootViewController = loginVC
         }
       }
       return true

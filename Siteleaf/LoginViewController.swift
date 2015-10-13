@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 import SwiftKeychainWrapper
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
   @IBOutlet weak var emailTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
           
           KeychainWrapper.setString("\(key)", forKey: "apiKey")
           KeychainWrapper.setString("\(secret)", forKey: "apiSecret")
-          //self.pingServer()
+          self.pingServer()
           //self.getMe()
           //self.getSites()
           //self.getSite("5320f79c5dde22641900013e")
@@ -55,9 +55,13 @@ class ViewController: UIViewController {
           //let parameters = ["title": "Test FAQs from iOS"]
           //self.createPagePost("53e6aa6b5dde227e04000213", parameters: parameters)
           //self.getPagePosts("53e6aa6b5dde227e04000213")
-          self.deletePost("561d591669702d53e4000345")
+          //self.deletePost("561d591669702d53e4000345")
           let defaults = NSUserDefaults.standardUserDefaults()
           defaults.setObject("true", forKey: "userLoggedIn")
+          let storyboard = UIStoryboard(name: "Main", bundle: nil)
+          let tabBarController = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as! UITabBarController
+          let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+          appDelegate.window?.rootViewController = tabBarController
         }
     }
   }
