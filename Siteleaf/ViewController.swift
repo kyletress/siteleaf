@@ -46,11 +46,15 @@ class ViewController: UIViewController {
           //self.getMe()
           //self.getSites()
           //self.getSite("5320f79c5dde22641900013e")
-          //self.getPages("5320f79c5dde22641900013e")
-          let parameters = ["title": "Test UPDATE from iOS App", "visibility": "draft"]
-          self.updatePage("561c8bd069702d54040002da", parameters: parameters)
+          //self.getSitePages("5320f79c5dde22641900013e")
+          //let parameters = ["title": "Test UPDATE from iOS App", "visibility": "draft"]
+          //self.updatePage("561c8bd069702d54040002da", parameters: parameters)
           //self.getPage("5320f79c5dde22641900013e")
-          self.getAllPages()
+          //self.getAllPages()
+          //self.deletePage("561c8bd069702d54040002da")
+          //let parameters = ["title": "Test Post from iOS"]
+          //self.createPost("5320f82e5dde22b5a6000325", parameters: parameters)
+          // CREATE POST MIGHT NOT HAVE WORKED AS EXPECTED. CHECK IT OUT LATER
           let defaults = NSUserDefaults.standardUserDefaults()
           defaults.setObject("true", forKey: "userLoggedIn")
         }
@@ -92,8 +96,8 @@ class ViewController: UIViewController {
     }
   }
   
-  func getPages(siteID: String) {
-    Alamofire.request(Router.GetPages(siteID)).responseJSON {
+  func getSitePages(siteID: String) {
+    Alamofire.request(Router.GetSitePages(siteID)).responseJSON {
       response in
       let json = JSON(response.result.value!)
       print(json)
@@ -125,6 +129,26 @@ class ViewController: UIViewController {
   }
   
   func updatePage(pageID: String, parameters: Dictionary<String, AnyObject>) {
+    Alamofire.request(Router.UpdatePage(pageID, parameters)).responseJSON {
+      response in
+      let json = JSON(response.result.value!)
+      print(json)
+    }
+  }
+  
+  func deletePage(pageID: String) {
+    Alamofire.request(Router.DeletePage(pageID))
+  }
+  
+  func getPagePosts(pageID: String) {
+    Alamofire.request(Router.GetPagePosts(pageID)).responseJSON {
+      response in
+      let json = JSON(response.result.value!)
+      print(json)
+    }
+  }
+  
+  func createPost(pageID: String, parameters: Dictionary<String, AnyObject>) {
     Alamofire.request(Router.UpdatePage(pageID, parameters)).responseJSON {
       response in
       let json = JSON(response.result.value!)
