@@ -15,16 +15,27 @@ enum Router: URLRequestConvertible {
   case Ping
   case GetSites
   case GetSite(String)
+  case CreateSite([String: AnyObject])
+  case UpdateSite(String, [String: AnyObject])
+  case DeleteSite(String)
   case GetMe
   case GetUsers
+  case GetSiteUsers(String)
   case GetSitePages(String)
   case GetPage(String)
   case CreatePage(String, [String: AnyObject])
   case UpdatePage(String, [String: AnyObject])
   case GetAllPages
   case DeletePage(String)
+  case GetSitePosts(String)
   case GetPagePosts(String)
-  case CreatePost(String, [String: AnyObject])
+  case CreatePagePost(String, [String: AnyObject])
+  case GetSiteAssets(String)
+  case GetAllPosts
+  case GetPost(String)
+  case UpdatePost(String, [String: AnyObject])
+  case DeletePost(String)
+  // TODO: Taxonomies, Assets, (site theme files?) 
   
   
   var method: Alamofire.Method {
@@ -33,11 +44,19 @@ enum Router: URLRequestConvertible {
       return .GET
     case .GetSites:
       return .GET
-    case GetSite:
+    case .GetSite:
       return .GET
+    case .CreateSite:
+      return .POST
+    case .UpdateSite:
+      return .PUT
+    case .DeleteSite:
+      return .DELETE
     case .GetMe:
       return .GET
     case .GetUsers:
+      return .GET
+    case .GetSiteUsers:
       return .GET
     case .GetSitePages:
       return .GET
@@ -51,10 +70,22 @@ enum Router: URLRequestConvertible {
       return .GET
     case .DeletePage:
       return .DELETE
+    case .GetSitePosts:
+      return .GET
     case .GetPagePosts:
       return .GET
-    case .CreatePost:
+    case .CreatePagePost:
       return .POST
+    case .GetSiteAssets:
+      return .GET
+    case .GetAllPosts:
+      return .GET
+    case .GetPost:
+      return .GET
+    case .UpdatePost:
+      return .PUT
+    case .DeletePost:
+      return .DELETE
     }
   }
   
@@ -67,10 +98,19 @@ enum Router: URLRequestConvertible {
       return "/sites.json"
     case .GetSite (let siteID):
       return "/sites/\(siteID)"
+    case .CreateSite(_):
+      return "/sites.json"
+    case .UpdateSite(let siteID, _):
+      return "/sites/\(siteID).json"
+    case .DeleteSite(let siteID):
+      return "/sites/\(siteID).json"
+    // USERS
     case .GetMe:
       return "/users/me.json"
     case .GetUsers:
       return "/users.json"
+    case .GetSiteUsers(let siteID):
+      return "/sites/\(siteID)/users.json"
     // PAGES
     case .GetSitePages (let siteID):
       return "/sites/\(siteID)/pages.json"
@@ -85,10 +125,23 @@ enum Router: URLRequestConvertible {
     case .DeletePage (let pageID):
       return "/pages/\(pageID).json"
     // POSTS
+    case .GetSitePosts(let siteID):
+      return "/sites/\(siteID)/posts.json"
     case .GetPagePosts(let pageID):
       return "/pages/\(pageID)/posts.json"
-    case .CreatePost(let pageID, _):
+    case .CreatePagePost(let pageID, _):
       return "/pages/\(pageID)/posts.json"
+    case .GetAllPosts:
+      return "/posts.json"
+    case .GetPost(let postID):
+      return "/posts/\(postID).json"
+    case .UpdatePost(let postID, _):
+      return "posts/\(postID).json"
+    case .DeletePost(let postID):
+      return "posts/\(postID).json"
+    // ASSETS
+    case .GetSiteAssets(let siteID):
+      return "/sites/\(siteID)/assets.json"
     }
   }
   
@@ -106,11 +159,17 @@ enum Router: URLRequestConvertible {
 
     mutableURLRequest.setValue("Basic \(base64Credentials)", forHTTPHeaderField: "Authorization")
     switch self {
+    case .CreateSite(let parameters):
+      return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+    case .UpdateSite(_, let parameters):
+      return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
     case .CreatePage(_, let parameters):
       return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
     case .UpdatePage(_, let parameters):
       return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
-    case .CreatePost(_, let parameters):
+    case .CreatePagePost(_, let parameters):
+      return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+    case .UpdatePost(_, let parameters):
       return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
     default:
       return mutableURLRequest

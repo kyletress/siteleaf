@@ -36,7 +36,7 @@ class ViewController: UIViewController {
       .responseJSON { response in
         if response.result.isSuccess {
           let json = JSON(response.result.value!)
-          print(json)
+          //print(json)
           let key = json["api_key"].stringValue
           let secret = json["api_secret"].stringValue
           
@@ -52,9 +52,10 @@ class ViewController: UIViewController {
           //self.getPage("5320f79c5dde22641900013e")
           //self.getAllPages()
           //self.deletePage("561c8bd069702d54040002da")
-          //let parameters = ["title": "Test Post from iOS"]
-          //self.createPost("5320f82e5dde22b5a6000325", parameters: parameters)
-          // CREATE POST MIGHT NOT HAVE WORKED AS EXPECTED. CHECK IT OUT LATER
+          //let parameters = ["title": "Test FAQs from iOS"]
+          //self.createPagePost("53e6aa6b5dde227e04000213", parameters: parameters)
+          //self.getPagePosts("53e6aa6b5dde227e04000213")
+          self.deletePost("561d591669702d53e4000345")
           let defaults = NSUserDefaults.standardUserDefaults()
           defaults.setObject("true", forKey: "userLoggedIn")
         }
@@ -148,12 +149,16 @@ class ViewController: UIViewController {
     }
   }
   
-  func createPost(pageID: String, parameters: Dictionary<String, AnyObject>) {
-    Alamofire.request(Router.UpdatePage(pageID, parameters)).responseJSON {
+  func createPagePost(pageID: String, parameters: Dictionary<String, AnyObject>) {
+    Alamofire.request(Router.CreatePagePost(pageID, parameters)).responseJSON {
       response in
       let json = JSON(response.result.value!)
       print(json)
     }
+  }
+  
+  func deletePost(postID: String) {
+    Alamofire.request(Router.DeletePost(postID))
   }
   
   func encodeHeaders(user: String, pass: String) -> [String: String] {
