@@ -18,6 +18,10 @@ enum Router: URLRequestConvertible {
   case GetMe
   case GetUsers
   case GetPages(String)
+  case GetPage(String)
+  case CreatePage(String, [String: AnyObject])
+  case UpdatePage(String, [String: AnyObject])
+  case GetAllPages
   
   
   var method: Alamofire.Method {
@@ -33,6 +37,14 @@ enum Router: URLRequestConvertible {
     case .GetUsers:
       return .GET
     case .GetPages:
+      return .GET
+    case .GetPage:
+      return .GET
+    case .CreatePage:
+      return .POST
+    case .UpdatePage:
+      return .PUT
+    case .GetAllPages:
       return .GET
     }
   }
@@ -51,6 +63,14 @@ enum Router: URLRequestConvertible {
       return "/users.json"
     case .GetPages (let siteID):
       return "/sites/\(siteID)/pages.json"
+    case .GetPage (let pageID):
+      return "/pages/\(pageID).json"
+    case .CreatePage (let siteID, _):
+      return "/sites/\(siteID)/pages.json"
+    case .UpdatePage (let pageID, _):
+      return "/pages/\(pageID).json"
+    case .GetAllPages:
+      return "/pages.json"
     }
   }
   
@@ -68,6 +88,10 @@ enum Router: URLRequestConvertible {
 
     mutableURLRequest.setValue("Basic \(base64Credentials)", forHTTPHeaderField: "Authorization")
     switch self {
+    case .CreatePage(_, let parameters):
+      return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+    case .UpdatePage(_, let parameters):
+      return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
     default:
       return mutableURLRequest
     }
