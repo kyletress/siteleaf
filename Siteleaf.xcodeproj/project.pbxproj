@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0910E8901BCD9ABA007AC97E /* SitesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910E88F1BCD9ABA007AC97E /* SitesViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		0910E8921BCD9B70007AC97E /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910E8911BCD9B70007AC97E /* MeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		0910E8941BCE081C007AC97E /* SiteleafAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0910E8931BCE081C007AC97E /* SiteleafAPIManager.swift */; settings = {ASSET_TAGS = (); }; };
 		0944E3C51BCB1522002A03AF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944E3C41BCB1522002A03AF /* Router.swift */; settings = {ASSET_TAGS = (); }; };
 		09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */; };
 		09D8A1B31B6C0FC1006D753B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B21B6C0FC1006D753B /* LoginViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		0910E88F1BCD9ABA007AC97E /* SitesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SitesViewController.swift; sourceTree = "<group>"; };
 		0910E8911BCD9B70007AC97E /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		0910E8931BCE081C007AC97E /* SiteleafAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteleafAPIManager.swift; sourceTree = "<group>"; };
 		0944E3C41BCB1522002A03AF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		09D8A1AB1B6C0FC1006D753B /* Siteleaf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siteleaf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D8A1AF1B6C0FC1006D753B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				0944E3C41BCB1522002A03AF /* Router.swift */,
+				0910E8931BCE081C007AC97E /* SiteleafAPIManager.swift */,
 				09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */,
 				09E881FD1BCAD2DC006941FF /* Site.swift */,
 				09D8A1B21B6C0FC1006D753B /* LoginViewController.swift */,
@@ -319,6 +322,7 @@
 				09D8A1B31B6C0FC1006D753B /* LoginViewController.swift in Sources */,
 				09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */,
 				0910E8901BCD9ABA007AC97E /* SitesViewController.swift in Sources */,
+				0910E8941BCE081C007AC97E /* SiteleafAPIManager.swift in Sources */,
 				0944E3C51BCB1522002A03AF /* Router.swift in Sources */,
 				09E881FE1BCAD2DC006941FF /* Site.swift in Sources */,
 			);

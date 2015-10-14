@@ -22,7 +22,6 @@ class LoginViewController: UIViewController {
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
 
   @IBAction func loginButton() {
@@ -36,13 +35,12 @@ class LoginViewController: UIViewController {
       .responseJSON { response in
         if response.result.isSuccess {
           let json = JSON(response.result.value!)
-          //print(json)
           let key = json["api_key"].stringValue
           let secret = json["api_secret"].stringValue
           
           KeychainWrapper.setString("\(key)", forKey: "apiKey")
           KeychainWrapper.setString("\(secret)", forKey: "apiSecret")
-          self.pingServer()
+          SiteleafAPIManager.sharedInstance.pingServer()
           //self.getMe()
           //self.getSites()
           //self.getSite("5320f79c5dde22641900013e")
@@ -65,106 +63,7 @@ class LoginViewController: UIViewController {
         }
     }
   }
-  
-  func pingServer() {
-    Alamofire.request(Router.Ping).responseJSON {
-      response in
-        let json = JSON(response.result.value!)
-        print(json)
-    }
-  }
-  
-  func getMe() {
-    Alamofire.request(Router.GetMe).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
-    }
-  }
-  
-  func getSites() {
-    Alamofire.request(Router.GetSites).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
-    }
-  }
-  
-  func getSite(siteID: String) {
-    Alamofire.request(Router.GetSite(siteID)).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      //print(json)
-      if let domain = json["domain"].string {
-        print(domain)
-      }
-    }
-  }
-  
-  func getSitePages(siteID: String) {
-    Alamofire.request(Router.GetSitePages(siteID)).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
-    }
-  }
-  
-  func getAllPages() {
-    Alamofire.request(Router.GetAllPages).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
-    }
-  }
-  
-  func getPage(id: String) {
-    Alamofire.request(Router.GetPage(id)).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
-    }
-  }
-  
-  func createPage(siteID: String, pageParams: Dictionary<String, AnyObject>) {
-    Alamofire.request(Router.CreatePage(siteID, pageParams)).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
-    }
-  }
-  
-  func updatePage(pageID: String, parameters: Dictionary<String, AnyObject>) {
-    Alamofire.request(Router.UpdatePage(pageID, parameters)).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
-    }
-  }
-  
-  func deletePage(pageID: String) {
-    Alamofire.request(Router.DeletePage(pageID))
-  }
-  
-  func getPagePosts(pageID: String) {
-    Alamofire.request(Router.GetPagePosts(pageID)).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
-    }
-  }
-  
-  func createPagePost(pageID: String, parameters: Dictionary<String, AnyObject>) {
-    Alamofire.request(Router.CreatePagePost(pageID, parameters)).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
-    }
-  }
-  
-  func deletePost(postID: String) {
-    Alamofire.request(Router.DeletePost(postID))
-  }
-  
+    
   func encodeHeaders(user: String, pass: String) -> [String: String] {
     let credentialData = "\(user):\(pass)".dataUsingEncoding(NSUTF8StringEncoding)!
     let base64Credentials = credentialData.base64EncodedStringWithOptions([])

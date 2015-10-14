@@ -17,6 +17,7 @@ class MeViewController: UIViewController {
   override func viewDidLoad() {
       super.viewDidLoad()
     setNameLabel()
+    SiteleafAPIManager.sharedInstance.pingServer()
     }
 
     override func didReceiveMemoryWarning() {

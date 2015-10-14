@@ -11,13 +11,13 @@ import UIKit
 class SitesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var sitesTableView: UITableView!
-  var sites: [String] = ["Kyle Tress", "Morgan Tracey"]
+  var sites = [Site]()
   
     override func viewDidLoad() {
       super.viewDidLoad()
+      loadSites()
       sitesTableView.delegate = self
       sitesTableView.dataSource = self
-      self.sitesTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,9 +36,23 @@ class SitesViewController: UIViewController, UITableViewDelegate, UITableViewDat
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = sitesTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
-    cell.textLabel?.text = sites[indexPath.row]
+    let cell = sitesTableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    let site = sites[indexPath.row]
+    cell.textLabel!.text = site.title
+    cell.detailTextLabel!.text = site.domain
     return cell
+  }
+  
+  func loadSites() {
+    //SiteleafAPIManager.sharedInstance.getSites()
+    let site1 = Site()
+    site1.title = "Kyle Tress"
+    site1.domain = "kyletress.com"
+    let site2 = Site()
+    site2.title = "Morgan Tracey"
+    site2.domain = "morgantracey.us"
+    self.sites = [site1, site2]
+    sitesTableView.reloadData()
   }
     
 
