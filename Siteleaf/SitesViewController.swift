@@ -15,6 +15,8 @@ class SitesViewController: UIViewController, UITableViewDelegate, UITableViewDat
   
     override func viewDidLoad() {
       super.viewDidLoad()
+      sitesTableView.delegate = self
+      sitesTableView.dataSource = self
       self.sitesTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
