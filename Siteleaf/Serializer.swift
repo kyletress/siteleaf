@@ -8,10 +8,12 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 // Single object
 public protocol ResponseObjectSerializable {
   init?(response: NSHTTPURLResponse, representation: AnyObject)
+  // init?(json: SwiftyJSON.json)
 }
 
 // collection of objects

@@ -43,16 +43,17 @@ class SitesViewController: UIViewController, UITableViewDelegate, UITableViewDat
   }
   
   func loadSites() {
-    SiteleafAPIManager.sharedInstance.getSites()
-//    let site1 = Site()
-//    site1.title = "Kyle Tress"
-//    site1.domain = "kyletress.com"
-//    let site2 = Site()
-//    site2.title = "Morgan Tracey"
-//    site2.domain = "morgantracey.us"
-//    self.sites = [site1, site2]
-    sitesTableView.reloadData()
-    
+    SiteleafAPIManager.sharedInstance.getSites { response in
+      guard response.result.error == nil else {
+        print(response.result.error)
+        return
+      }
+      
+      if let fetchedSites = response.result.value {
+        self.sites = fetchedSites
+      }
+      self.sitesTableView.reloadData()
+    }
   }
   
 
