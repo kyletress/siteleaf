@@ -30,10 +30,15 @@ class SiteleafAPIManager {
   }
   
   func getSites() {
-    Alamofire.request(Router.GetSites).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
+//    Alamofire.request(Router.GetSites).responseJSON {
+//      response in
+//      let json = JSON(response.result.value!)
+//      print(json)
+//    }
+    Alamofire.request(Router.GetSites)
+      .responseCollection { (response: Response<[Site], NSError>) in
+        //debugPrint(response)
+        print(response)
     }
   }
   

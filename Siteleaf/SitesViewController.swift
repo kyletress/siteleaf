@@ -22,7 +22,6 @@ class SitesViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
   
   // TABLE VIEW METHODS
@@ -44,17 +43,18 @@ class SitesViewController: UIViewController, UITableViewDelegate, UITableViewDat
   }
   
   func loadSites() {
-    //SiteleafAPIManager.sharedInstance.getSites()
-    let site1 = Site()
-    site1.title = "Kyle Tress"
-    site1.domain = "kyletress.com"
-    let site2 = Site()
-    site2.title = "Morgan Tracey"
-    site2.domain = "morgantracey.us"
-    self.sites = [site1, site2]
+    SiteleafAPIManager.sharedInstance.getSites()
+//    let site1 = Site()
+//    site1.title = "Kyle Tress"
+//    site1.domain = "kyletress.com"
+//    let site2 = Site()
+//    site2.title = "Morgan Tracey"
+//    site2.domain = "morgantracey.us"
+//    self.sites = [site1, site2]
     sitesTableView.reloadData()
-  }
     
+  }
+  
 
     /*
     // MARK: - Navigation
