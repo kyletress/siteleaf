@@ -8,17 +8,21 @@
 
 import UIKit
 
-class PagesViewController: UIViewController {
+class PagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  @IBOutlet weak var tableView: UITableView!
+  var pages = [Page]()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    loadPages()
+    tableView.delegate = self
+    tableView.dataSource = self
 
-        // Do any additional setup after loading the view.
-    }
+  }
 
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+      super.didReceiveMemoryWarning()
     }
   
     @IBAction func cancelToPlayersViewController(segue:UIStoryboardSegue) {
@@ -26,16 +30,44 @@ class PagesViewController: UIViewController {
   
     @IBAction func savePlayerDetail(segue:UIStoryboardSegue) {
     }
+  
+  // TABLE VIEW METHODS
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return pages.count
+  }
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    let page = pages[indexPath.row]
+    cell.textLabel!.text = page.title
+    cell.detailTextLabel!.text = page.visibility
+    if page.visibility == "draft" {
+      cell.detailTextLabel!.textColor = UIColor.redColor()
+    } else {
+      cell.detailTextLabel!.textColor = UIColor.grayColor()
+    }
+    return cell
+  }
+  
+  func loadPages() {
+    SiteleafAPIManager.sharedInstance.getSitePages("5320f79c5dde22641900013e") { response in
+      guard response.result.error == nil else {
+        print(response.result.error)
+        return
+      }
+      
+      if let fetchedPages = response.result.value {
+        self.pages = fetchedPages
+      }
+      self.tableView.reloadData()
+    }
+  }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

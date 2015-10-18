@@ -30,11 +30,6 @@ class SiteleafAPIManager {
   }
   
   func getSites(completionHandler: (Response<[Site], NSError>) -> Void) {
-//    Alamofire.request(Router.GetSites).responseJSON {
-//      response in
-//      let json = JSON(response.result.value!)
-//      print(json)
-//    }
     Alamofire.request(Router.GetSites)
       .validate()
       .responseCollection { (response: Response<[Site], NSError>) in
@@ -55,11 +50,15 @@ class SiteleafAPIManager {
     }
   }
   
-  func getSitePages(siteID: String) {
-    Alamofire.request(Router.GetSitePages(siteID)).responseJSON {
-      response in
-      let json = JSON(response.result.value!)
-      print(json)
+  func getSitePages(siteID: String, completionHandler: (Response<[Page], NSError>) -> Void) {
+    Alamofire.request(Router.GetSitePages(siteID))
+      .validate()
+      .responseCollection { (response: Response<[Page], NSError>) in
+        completionHandler(response)
+        print(response)
+//      response in
+//      let json = JSON(response.result.value!)
+//      print(json)
     }
   }
   
