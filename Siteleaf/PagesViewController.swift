@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import SafariServices
 
 class PagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet weak var tableView: UITableView!
   var pages = [Page]()
+  var siteID: String!
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    print(siteID)
     loadPages()
     tableView.delegate = self
     tableView.dataSource = self
-
   }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +40,9 @@ class PagesViewController: UIViewController, UITableViewDelegate, UITableViewDat
   }
   
   func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    
+    performSegueWithIdentifier("showPageSegue", sender: self)
   }
-  
+
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
     let page = pages[indexPath.row]
@@ -55,7 +57,7 @@ class PagesViewController: UIViewController, UITableViewDelegate, UITableViewDat
   }
   
   func loadPages() {
-    SiteleafAPIManager.sharedInstance.getSitePages("5320f79c5dde22641900013e") { response in
+    SiteleafAPIManager.sharedInstance.getSitePages(siteID) { response in
       guard response.result.error == nil else {
         print(response.result.error)
         return
@@ -67,7 +69,17 @@ class PagesViewController: UIViewController, UITableViewDelegate, UITableViewDat
       self.tableView.reloadData()
     }
   }
-    
-
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "showPageSegue" {
+      if let indexPath = self.tableView.indexPathForSelectedRow {
+        let object = pages[indexPath.row] as Page
+        let controller = (segue.destinationViewController as! UINavigationController).topViewController as! PageViewController
+        controller.page = object
+      }
+    }
+  }
+  
+  
 
 }

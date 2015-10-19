@@ -13,6 +13,7 @@
 		093BAEC31BD35BAF00F74CAC /* Serializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093BAEC21BD35BAF00F74CAC /* Serializer.swift */; settings = {ASSET_TAGS = (); }; };
 		093BAEC51BD36B4600F74CAC /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 093BAEC41BD36B4600F74CAC /* Page.swift */; settings = {ASSET_TAGS = (); }; };
 		0944E3C51BCB1522002A03AF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0944E3C41BCB1522002A03AF /* Router.swift */; settings = {ASSET_TAGS = (); }; };
+		09A654981BD44DE400CD05AF /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A654971BD44DE400CD05AF /* PageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */; };
 		09D8A1B31B6C0FC1006D753B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8A1B21B6C0FC1006D753B /* LoginViewController.swift */; };
 		09D8A1B61B6C0FC1006D753B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09D8A1B41B6C0FC1006D753B /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		093BAEC21BD35BAF00F74CAC /* Serializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serializer.swift; sourceTree = "<group>"; };
 		093BAEC41BD36B4600F74CAC /* Page.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 		0944E3C41BCB1522002A03AF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		09A654971BD44DE400CD05AF /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		09D8A1AB1B6C0FC1006D753B /* Siteleaf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Siteleaf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09D8A1AF1B6C0FC1006D753B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09D8A1B01B6C0FC1006D753B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				0910E88F1BCD9ABA007AC97E /* SitesViewController.swift */,
 				09D8A1B41B6C0FC1006D753B /* Main.storyboard */,
 				09FC55111BCF669100749523 /* PagesViewController.swift */,
+				09A654971BD44DE400CD05AF /* PageViewController.swift */,
 				0910E8911BCD9B70007AC97E /* MeViewController.swift */,
 				09D8A1B71B6C0FC1006D753B /* Images.xcassets */,
 				09D8A1B91B6C0FC1006D753B /* LaunchScreen.xib */,
@@ -329,6 +332,7 @@
 			files = (
 				0910E8921BCD9B70007AC97E /* MeViewController.swift in Sources */,
 				093BAEC31BD35BAF00F74CAC /* Serializer.swift in Sources */,
+				09A654981BD44DE400CD05AF /* PageViewController.swift in Sources */,
 				09D8A1B31B6C0FC1006D753B /* LoginViewController.swift in Sources */,
 				09D8A1B11B6C0FC1006D753B /* AppDelegate.swift in Sources */,
 				093BAEC51BD36B4600F74CAC /* Page.swift in Sources */,

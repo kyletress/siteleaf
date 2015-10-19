@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -109,7 +111,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="jsV-d2-Bx5" detailTextLabel="ZYj-pO-HuD" style="IBUITableViewCellStyleValue1" id="1lg-cj-BDm">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1lg-cj-BDm" id="OWo-F1-xnq">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
@@ -135,6 +137,9 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <segue destination="3XC-M1-eHg" kind="show" identifier="showPageSegue" id="rFX-DN-gqy"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -161,7 +166,54 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gnz-aZ-fB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1710" y="1026"/>
+            <point key="canvasLocation" x="1755" y="274"/>
+        </scene>
+        <!--Page-->
+        <scene sceneID="0MN-0w-HFH">
+            <objects>
+                <viewController id="2M3-mj-Yf6" customClass="PageViewController" customModule="Siteleaf" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SQy-ZH-uoR"/>
+                        <viewControllerLayoutGuide type="bottom" id="FU6-3G-vJz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r3y-k0-pSZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="R9G-9y-7uA">
+                                <rect key="frame" x="20" y="0.0" width="560" height="580"/>
+                                <animations/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="R9G-9y-7uA" firstAttribute="top" secondItem="r3y-k0-pSZ" secondAttribute="top" id="75a-8K-ZRP"/>
+                            <constraint firstAttribute="bottom" secondItem="R9G-9y-7uA" secondAttribute="bottom" constant="20" symbolic="YES" id="7yG-f9-zfd"/>
+                            <constraint firstItem="R9G-9y-7uA" firstAttribute="leading" secondItem="r3y-k0-pSZ" secondAttribute="leadingMargin" id="EvN-sI-J6M"/>
+                            <constraint firstItem="R9G-9y-7uA" firstAttribute="trailing" secondItem="r3y-k0-pSZ" secondAttribute="trailingMargin" id="USf-bM-8gh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Page" id="Mdl-Tt-TBQ">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="edit" id="xnn-aI-nRk"/>
+                            <barButtonItem title="Preview" style="plain" id="djE-Vj-x7g">
+                                <connections>
+                                    <action selector="previewPageButton:" destination="2M3-mj-Yf6" id="kpe-Dh-gqz"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="R9G-9y-7uA" id="fml-dc-mlg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7s5-Ke-jta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3292" y="274"/>
         </scene>
         <!--New Page-->
         <scene sceneID="sZs-2r-SFC">
@@ -287,7 +339,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DKV-8Z-Yzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="CZb-JD-EbX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3178" y="1026"/>
+            <point key="canvasLocation" x="2516" y="1134"/>
         </scene>
         <!--Sites-->
         <scene sceneID="abn-TR-lcO">
@@ -343,6 +395,7 @@
                     <tabBarItem key="tabBarItem" title="Sites" id="IpC-Ic-1y5"/>
                     <connections>
                         <outlet property="sitesTableView" destination="NNt-Tu-E7l" id="186-ux-Zji"/>
+                        <segue destination="x7Z-cC-9sQ" kind="show" identifier="showPagesSegue" id="WAu-50-H7e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yDb-ud-e5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -386,7 +439,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DSp-tp-imL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2470" y="1026"/>
+            <point key="canvasLocation" x="1755" y="1134"/>
         </scene>
         <!--Pages-->
         <scene sceneID="nPz-Lb-a30">
@@ -408,5 +461,27 @@
             </objects>
             <point key="canvasLocation" x="898" y="1026"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p3J-WQ-KIU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3XC-M1-eHg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cpo-yN-IrX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2M3-mj-Yf6" kind="relationship" relationship="rootViewController" id="n56-Mj-5Vp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2SP-Jv-5Ca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2516" y="274"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="WAu-50-H7e"/>
+    </inferredMetricsTieBreakers>
 </document>
